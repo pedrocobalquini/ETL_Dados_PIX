@@ -9,14 +9,15 @@ def obter_mes_ano_atual():
 
 def get_link_url():
     data_alvo = obter_mes_ano_atual()
-    
+
     url = (
         f"https://olinda.bcb.gov.br/olinda/servico/Pix_DadosAbertos/versao/v1/odata/"
         f"EstatisticasTransacoesPix(Database=@Database)?@Database='{data_alvo}'"
-        "&$top=5000&$format=json"
+        "&$top=1000&$format=json"
         "&$select=AnoMes,PAG_PFPJ,REC_PFPJ,PAG_REGIAO,REC_REGIAO,"
         "PAG_IDADE,REC_IDADE,FORMAINICIACAO,NATUREZA,FINALIDADE,VALOR,QUANTIDADE"
     )
-    
+
     response = requests.get(url)
+    
     return response.json()

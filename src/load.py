@@ -1,13 +1,14 @@
 from supabase import create_client
+import os
 
 def load_to_supabase(df):
     if df.empty:
         print("Aviso: DataFrame vazio. Nada será carregado.")
         return
 
-    url = ""
-    key = ""
-    
+    url = os.getenv("SUPABASE_URL")
+    key = os.getenv("SUPABASE_KEY")
+
     supabase = create_client(url, key)
     dados_para_subir = df.to_dict(orient='records')
 

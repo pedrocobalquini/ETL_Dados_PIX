@@ -1,6 +1,9 @@
-from src.extract import get_link_url
-from src.transform import transform_data
-from src.load import load_to_supabase
+from extract import get_link_url
+from transform import transform_data
+from load import load_to_supabase
+from dotenv import load_dotenv
+
+load_dotenv()
 
 def run_etl():
     print("--- Iniciando Pipeline ELT Pix ---")
