@@ -60,13 +60,12 @@ pip install -r requirements.txt
 Após a criação, copie:
 
 - URL do Projeto
-- Chave do projeto
-
-Essas informações devem ser colocadas dentro do arquivo `load.py` nos campos "**url**" e "**key**".
+- Chave do projeto do `service_role`
+- Cole essas informações em um arquivo `.env`
 
 ---
 
-### 5. Criar as Tabelas ------------------------------------
+### 5. Criar as Tabelas
 
 No painel do Supabase:
 
@@ -75,22 +74,27 @@ No painel do Supabase:
 3. Execute o script abaixo:
 
 ```sql
--- Exemplo
-
 CREATE TABLE transacoes_pix (
-    id BIGSERIAL PRIMARY KEY,
-    data_transacao TIMESTAMP,
-    valor NUMERIC(12,2),
-    cpf_pagador VARCHAR(20),
-    cpf_recebedor VARCHAR(20),
-    cidade VARCHAR(100),
-    estado VARCHAR(2),
-    created_at TIMESTAMP DEFAULT NOW()
+    id SERIAL PRIMARY KEY,
+    data_transacao DATE NOT NULL,
+    pagador VARCHAR(2) NOT NULL,
+    receptor VARCHAR(2) NOT NULL,
+    regiao_pagador VARCHAR(15) NOT NULL,
+    regiao_receptor VARCHAR(15) NOT NULL,
+    idade_pagador VARCHAR(20) NOT NULL,
+    idade_receptor VARCHAR(20) NOT NULL,
+    forma_iniciacao VARCHAR(15) NOT NULL,
+    natureza_pix VARCHAR(3) NOT NULL,
+    finalidade VARCHAR(30) NOT NULL,
+    valor_pix NUMERIC(18,2) NOT NULL,
+    quantidade_pix INTEGER NOT NULL,
+    criado_em TIMESTAMP WITH TIME ZONE DEFAULT NOW()
 );
-
-CREATE INDEX idx_data_transacao
-ON transacoes_pix(data_transacao);
 ```
+
+Dados do Supabase para o Power BI
+- Vá na aba `connect` e troque o método de conexão para `Session pooler`
+- Copie os valores de host, porta e user
 
 ---
 
