@@ -4,7 +4,7 @@ import pandas as pd
 
 def obter_mes_ano_atual():
     data_atual = datetime.now()
-    data_nova = data_atual - pd.DateOffset(months=3)
+    data_nova = data_atual - pd.DateOffset(months=2)
     return data_nova.strftime('%Y%m')
 
 def get_link_url():
@@ -13,7 +13,7 @@ def get_link_url():
     url = (
         f"https://olinda.bcb.gov.br/olinda/servico/Pix_DadosAbertos/versao/v1/odata/"
         f"EstatisticasTransacoesPix(Database=@Database)?@Database='{data_alvo}'"
-        "&$top=1000&$format=json"
+        "&$top=5000&$format=json"
         "&$select=AnoMes,PAG_PFPJ,REC_PFPJ,PAG_REGIAO,REC_REGIAO,"
         "PAG_IDADE,REC_IDADE,FORMAINICIACAO,NATUREZA,FINALIDADE,VALOR,QUANTIDADE"
     )

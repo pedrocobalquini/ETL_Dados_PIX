@@ -40,6 +40,5 @@ def transform_data(json_data):
 
         df['data_transacao'] = pd.to_datetime(df['data_transacao'], format='%Y%m')
         df['data_transacao'] = df['data_transacao'].dt.strftime('%Y-%m-%d')
-
-        print("✅ passou no transform.py")
+        
     return df
