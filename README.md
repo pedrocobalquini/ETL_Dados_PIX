@@ -12,11 +12,12 @@ https://dadosabertos.bcb.gov.br/dataset/pix
 
 https://olinda.bcb.gov.br/olinda/servico/Pix_DadosAbertos/versao/v1/documentacao
 
+## Preview do dashboard
+https://github.com/user-attachments/assets/b3a967d5-e993-4925-9005-c3c6d3e9cdb2
 
 ## Como rodar o projeto
 
 ### Pré-requisitos
-
 Certifique-se de possuir os seguintes requisitos instalados:
 
 - Python 3.13 ou superior
@@ -135,3 +136,6 @@ python src/main.py
 - Os dados demoram para atualizar, mas isso é algo relacionado a política adotada pelo Bacen para os dados na api. Com base nisso, os dados gerados são sempre de 3 meses anteriores a data atual.
 
 ---
+
+
+
