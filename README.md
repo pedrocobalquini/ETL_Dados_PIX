@@ -13,7 +13,7 @@ https://dadosabertos.bcb.gov.br/dataset/pix
 https://olinda.bcb.gov.br/olinda/servico/Pix_DadosAbertos/versao/v1/documentacao
 
 ## Preview do dashboard
-https://github.com/user-attachments/assets/b3a967d5-e993-4925-9005-c3c6d3e9cdb2
+https://github.com/user-attachments/assets/eebacda5-8d76-4edd-9b8f-85c6b71d2ccd
 
 ## Como rodar o projeto
 
